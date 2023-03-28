@@ -6,11 +6,9 @@ node {
             git branch: 'main', url: 'https://github.com/vyom-Labs-pvt-ltd/DevOps.git'
          
         }
-    stage('Continuous Build') {
-    
-    def mavenHome= tool name: "Maven" ,type: "maven"
-        sh "${mavenHome}/bin/mvn clean package"
-		}
+   stage('Build') {
+    sh 'mvn clean package'
+}
 
 
     stage('Build Docker Image') {
